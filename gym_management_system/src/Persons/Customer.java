@@ -85,7 +85,7 @@ public class Customer {
 	}
 	
 	public static void cusRegistration(Scanner scan) {
-		
+		scan.nextLine();
 		System.out.println("ENTER FIRSTNAME!");
 		String firstname = scan.nextLine();
 		
@@ -103,6 +103,8 @@ public class Customer {
 		
 		System.out.println("ENTER PHONE NUMBER!");
 		int phone_no = scan.nextInt();
+		
+		scan.nextLine();
 		
 		System.out.println("ENTER USERNAME!");
 		String username = scan.nextLine();
@@ -122,4 +124,7 @@ public class Customer {
 		
 	}
 
+	public static void customerLogin(Scanner scan) {
+		
+	}
 }

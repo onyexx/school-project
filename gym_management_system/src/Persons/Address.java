@@ -15,6 +15,7 @@ public class Address {
 	public static int postal_code;
 	public static int customer_id;
 	public static int employee_id;
+	public static int information_id;
 	public static String ad;
 	
 	public static int getAddress_id() {
@@ -89,49 +90,54 @@ public class Address {
 	public static void setEmployee_id(int employee_id) {
 		Address.employee_id = employee_id;
 	}
+	public static int getInformation_id() {
+		return information_id;
+	}
+	public static void setInformation_id(int information_id) {
+		Address.information_id = information_id;
+	}
 	
 	public static void addDetails(Scanner scan) {
 		scan.nextLine();
 		
-		System.out.println("ENTER BUILDING NAME!");
-		String building_name = scan.nextLine();
-		
-		System.out.println("ENTER COMPLEX NAME!");
-		String complex_name = scan.nextLine();
-		
-		System.out.println("ENTER APARTMENT NUMBER!");
-		int apartment_number = scan.nextInt();
-		
-		System.out.println("ENTER STREET NUMBER!");
-		int street_number = scan.nextInt();
-		
-		scan.nextLine();
-		
-		System.out.println("ENTER STREET NAME!");
-		String street_name = scan.nextLine();
-		
-		System.out.println("ENTER CITY");
-		String city = scan.nextLine();
-		
-		System.out.println("ENTER PROVINCE");
-		String province = scan.nextLine();
-		
-		System.out.println("ENTER COUNTRY");
-		String country = scan.nextLine();
-		
-		System.out.println("ENTER POSTAL CODE");
-		int postal_code = scan.nextInt();
-		
-		System.out.println("ENTER CUSTOMER ID");
-		int customer_id = scan.nextInt();
-		
-		System.out.println("ENTER EMPLOYEE ID");
-		int employee_id = scan.nextInt();
-		
+	System.out.println("ENTER BUILDING NAME");
+	String building_name = scan.nextLine();
 	
+	System.out.println("ENTER COMPLEX NAME");
+	String complex_name = scan.nextLine();
 	
-	ad = "INSERT INTO address(building_name,complex_name,apartment_number,street_number,street_name,city,province,country,postal_code,customer_id,employee_id) "
-			+ "VALUES('"+building_name+"','"+complex_name+"',"+apartment_number+","+street_number+",'"+street_name+"','"+city+"','"+province+"','"+country+"',"+postal_code+","+customer_id+","+employee_id+")";
-
+	System.out.println("ENTER APARTMENT NUMBER");
+     int apartment_number = scan.nextInt();
+     
+     System.out.println("ENTER STREET NUMBER");
+     int street_number = scan.nextInt();
+     scan.nextLine();
+     System.out.println("ENTER STREET NAME");
+     String street_name = scan.nextLine();
+     
+     System.out.println("ENTER CITY");
+     String city = scan.nextLine();
+     
+     System.out.println("ENTER PROVINCE");
+     String province = scan.nextLine();
+     
+     System.out.println("ENTER COUNTRY");
+     String country = scan.nextLine();
+     
+     System.out.println("ENTER POSTAL CODE");
+     int postal_code = scan.nextInt();
+     
+     System.out.println("ENTER CUSTOMER ID");
+     int customer_id = scan.nextInt();
+     
+     System.out.println("ENTER EMPLOYEE ID");
+     int employee_id = scan.nextInt();
+     
+     System.out.println("ENTER INFORMATION ID");
+     int information_id = scan.nextInt();
+     
+     ad = "INSERT INTO address(building_name,complex_name,apartment_number,street_number,street_name,city,province,country,postal_code,customer_id,employee_id,information_id) "
+     		+ "VALUES('"+building_name+"','"+complex_name+"',"+apartment_number+","+street_number+",'"+street_name+"','"+city+"','"+province+"','"+country+"',"+postal_code+","+customer_id+","+employee_id+","+information_id+")";
+	
 	}
 }

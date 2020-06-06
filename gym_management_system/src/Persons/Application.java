@@ -17,37 +17,59 @@ public class Application {
 		List<Address> address = new ArrayList<>();
 		List<Personalinformation> personalinformation = new ArrayList<>();
 
-		for (int o = 0; o < 3; o++) {
+		for (int o = 0; o <=3; o++) {
 
 			System.out.println(
 					"\t \tWELCOME TO ONYEXX GYM WHERE YOU GET FIT AND IMPROVE YOUR MUSCLE STRENGTH AND BOOST YOUR ENDURANCE");
-
+           
+				
 			System.out.println(
-					"\tPRESS 1 FOR EMPLOYEE REGISTRATION,2 FOR CUSTOMER REGISTRATION,3 FOR EMPLOYEE LOGIN,4 FOR CUSTOMER LOGIN,5 TO SHUTDOWN");
+					"\tPRESS 1 FOR EMPLOYEE REGISTRATION,2 FOR CUSTOMER REGISTRATION,3 FOR EMPLOYEE LOGIN,4 FOR CUSTOMER LOGIN");
 			int input = scan.nextInt();
-			if (input == 1) {
-				Employee.empRegistration(scan);
+			
+			switch (input) {
+
+			case 1:
+				// Employee.empRegistration(scan);
 				Address.addDetails(scan);
-			} else if (input == 2) {
-				Customer.cusRegistration(scan);
-				Address.addDetails(scan);
+				break;
+			case 2:
+		        //Customer.cusRegistration(scan);
+				//Address.addDetails(scan);
 				Personalinformation.infoDetails(scan);
-			} else if (input == 3) {
+				break;
+			case 3:
 				Employee.empLogin(scan);
+				break;
+			case 4:
+				Customer.customerLogin(scan);
+				break;
+
 			}
+			
+			/*
+			 * if (input == 1) { Employee.empRegistration(scan); Address.addDetails(scan); }
+			 * else if (input == 2) { Customer.cusRegistration(scan);
+			 * Address.addDetails(scan); Personalinformation.infoDetails(scan); } else if
+			 * (input == 3) { Employee.empLogin(scan); } break;
+			 */
 			break;
 		}
+		
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/GymSystem", "root", "pvi@2020");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/GymSystem_db", "root", "pvi@2020");
 
 			Statement stmt = con.createStatement();
 
-			stmt.executeUpdate(Employee.em);
-			stmt.executeUpdate(Customer.cus);
-			stmt.executeUpdate(Address.ad);
-			stmt.executeUpdate(Personalinformation.info);
+			// stmt.executeUpdate(Employee.em);
+
+			 //stmt.executeUpdate(Customer.cus);
+
+			 //stmt.executeUpdate(Address.ad);
+
+			 stmt.executeUpdate(Personalinformation.info);
 
 			ResultSet rs = stmt.executeQuery("SELECT * FROM  employee");
 
@@ -69,7 +91,7 @@ public class Application {
 				System.out.println(em);
 
 				Address add = new Address();
-				
+
 				Address.setAddress_id(rs.getInt("address_id"));
 				Address.setBuilding_name(rs.getString("building_name"));
 				Address.setComplex_name(rs.getString("complex_name"));
@@ -82,6 +104,7 @@ public class Application {
 				Address.setPostal_code(rs.getInt("postal_code"));
 				Address.setCustomer_id(rs.getInt("customer_id"));
 				Address.setEmployee_id(rs.getInt("employee_id"));
+				Address.setInformation_id(rs.getInt("information_id"));
 
 				address.add(add);
 				System.out.println(add);
