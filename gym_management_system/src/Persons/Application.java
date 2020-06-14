@@ -30,12 +30,12 @@ public class Application {
 			switch (input) {
 
 			case 1:
-				// Employee.empRegistration(scan);
-				Address.addDetails(scan);
+				 Employee.empRegistration(scan);
+				//Address.addDetails(scan);
 				break;
 			case 2:
-		        //Customer.cusRegistration(scan);
-				//Address.addDetails(scan);
+		        Customer.cusRegistration(scan);
+				Address.addDetails(scan);
 				Personalinformation.infoDetails(scan);
 				break;
 			case 3:
@@ -62,91 +62,93 @@ public class Application {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/GymSystem_db", "root", "pvi@2020");
 
 			Statement stmt = con.createStatement();
+			
 
-			// stmt.executeUpdate(Employee.em);
+			stmt.executeUpdate(Employee.em);
 
-			 //stmt.executeUpdate(Customer.cus);
+			 stmt.executeUpdate(Customer.cus);
 
-			 //stmt.executeUpdate(Address.ad);
+			 stmt.executeUpdate(Address.ad);
 
 			 stmt.executeUpdate(Personalinformation.info);
+			 
 
 			ResultSet rs = stmt.executeQuery("SELECT * FROM  employee");
 
 			while (rs.next()) {
 				Employee em = new Employee();
 
-				Employee.setEmployee_id(rs.getInt("employee_id"));
-				Employee.setFirstname(rs.getString("firstname"));
-				Employee.setLastname(rs.getString("lastname"));
-				Employee.setEmail(rs.getString("email"));
-				Employee.setPhone_no(rs.getInt("phone_no"));
-				Employee.setId(rs.getString("id"));
-				Employee.setDateOfBirth(rs.getString("dateOfBirth"));
-				Employee.setUsername(rs.getString("username"));
-				Employee.setPassword(rs.getString("password"));
-				Employee.setAddress_id(rs.getInt("address_id"));
+				em.setEmployee_id(rs.getInt("employee_id"));
+				em.setFirstname(rs.getString("firstname"));
+				em.setLastname(rs.getString("lastname"));
+				em.setEmail(rs.getString("email"));
+				em.setPhone_no(rs.getInt("phone_no"));
+				em.setId(rs.getString("id"));
+				em.setDateOfBirth(rs.getString("dateOfBirth"));
+				em.setUsername(rs.getString("username"));
+				em.setPassword(rs.getString("password"));
+				em.setAddress_id(rs.getInt("address_id"));
 
 				employee.add(em);
 				System.out.println(em);
 
 				Address add = new Address();
 
-				Address.setAddress_id(rs.getInt("address_id"));
-				Address.setBuilding_name(rs.getString("building_name"));
-				Address.setComplex_name(rs.getString("complex_name"));
-				Address.setApartment_number(rs.getInt("apartment_number"));
-				Address.setStreet_number(rs.getInt("street_number"));
-				Address.setStreet_name(rs.getString("street_name"));
-				Address.setCity(rs.getString("city"));
-				Address.setProvince(rs.getString("province"));
-				Address.setCountry(rs.getString("country"));
-				Address.setPostal_code(rs.getInt("postal_code"));
-				Address.setCustomer_id(rs.getInt("customer_id"));
-				Address.setEmployee_id(rs.getInt("employee_id"));
-				Address.setInformation_id(rs.getInt("information_id"));
+				add.setAddress_id(rs.getInt("address_id"));
+				add.setBuilding_name(rs.getString("building_name"));
+				add.setComplex_name(rs.getString("complex_name"));
+				add.setApartment_number(rs.getInt("apartment_number"));
+				add.setStreet_number(rs.getInt("street_number"));
+				add.setStreet_name(rs.getString("street_name"));
+				add.setCity(rs.getString("city"));
+				add.setProvince(rs.getString("province"));
+				add.setCountry(rs.getString("country"));
+				add.setPostal_code(rs.getInt("postal_code"));
+				add.setCustomer_id(rs.getInt("customer_id"));
+				add.setEmployee_id(rs.getInt("employee_id"));
+				add.setInformation_id(rs.getInt("information_id"));
 
 				address.add(add);
 				System.out.println(add);
 
 				Customer cu = new Customer();
 
-				Customer.setCusomer_id(rs.getInt("customer_id"));
-				Customer.setFirstname(rs.getString("firstname"));
-				Customer.setLastname(rs.getString("lastname"));
-				Customer.setEmail(rs.getString("email"));
-				Customer.setDateOfBirth(rs.getString("dateOfBirth"));
-				Customer.setId(rs.getString("id"));
-				Customer.setPhone_no(rs.getInt("phone_no"));
-				Customer.setUsername(rs.getString("username"));
-				Customer.setPassword(rs.getString("password"));
-				Customer.setPackage_id(rs.getInt("package_id"));
-				Customer.setAddress_id(rs.getInt("address_id"));
+				cu.setCusomer_id(rs.getInt("customer_id"));
+				cu.setFirstname(rs.getString("firstname"));
+				cu.setLastname(rs.getString("lastname"));
+				cu.setEmail(rs.getString("email"));
+				cu.setDateOfBirth(rs.getString("dateOfBirth"));
+				cu.setId(rs.getString("id"));
+				cu.setPhone_no(rs.getInt("phone_no"));
+				cu.setUsername(rs.getString("username"));
+				cu.setPassword(rs.getString("password"));
+				cu.setPackage_id(rs.getInt("package_id"));
+				cu.setAddress_id(rs.getInt("address_id"));
 
 				customer.add(cu);
 				System.out.println(cu);
 
 				Personalinformation per = new Personalinformation();
 
-				Personalinformation.setInformation_id(rs.getInt("information_id"));
-				Personalinformation.setEmployer_name(rs.getString("employer_name"));
-				Personalinformation.setOccupation(rs.getString("occupation"));
-				Personalinformation.setEmployment_duration(rs.getString("employment_duration"));
-				Personalinformation.setGross_income(rs.getString("gross_income"));
-				Personalinformation.setNet_income(rs.getString("net_income"));
-				Personalinformation.setGross_monthly_expenses(rs.getString("gross_monthly_expenses"));
-				Personalinformation.setCompny_street_name(rs.getString("company_street_name"));
-				Personalinformation.setCompany_suburb(rs.getString("company_suburb"));
-				Personalinformation.setCompany_city(rs.getString("company_city"));
-				Personalinformation.setPostal_code(rs.getInt("postal_code"));
-				Personalinformation.setBank_name(rs.getString("bank_name"));
-				Personalinformation.setBranch_name(rs.getString("branch_name"));
-				Personalinformation.setBranch_code(rs.getInt("branch_code"));
-				Personalinformation.setAccount_holder(rs.getString("account_holder"));
-				Personalinformation.setAccount_type(rs.getString("account_type"));
-				Personalinformation.setAccount_no(rs.getInt("account_no"));
-				Personalinformation.setDebit_date(rs.getInt("debit_date"));
-				Personalinformation.setCustomer_id(rs.getInt("customer_id"));
+				per.setInformation_id(rs.getInt("information_id"));
+				per.setEmployer_name(rs.getString("employer_name"));
+				per.setOccupation(rs.getString("occupation"));
+				per.setEmployment_duration(rs.getString("employment_duration"));
+				per.setGross_income(rs.getString("gross_income"));
+				per.setNet_income(rs.getString("net_income"));
+				per.setGross_monthly_expenses(rs.getString("gross_monthly_expenses"));
+				per.setCompny_street_name(rs.getString("company_street_name"));
+				per.setCompany_suburb(rs.getString("company_suburb"));
+				per.setCompany_city(rs.getString("company_city"));
+				per.setPostal_code(rs.getInt("postal_code"));
+				per.setBank_name(rs.getString("bank_name"));
+				per.setBranch_name(rs.getString("branch_name"));
+				per.setBranch_code(rs.getInt("branch_code"));
+				per.setAccount_holder(rs.getString("account_holder"));
+				per.setAccount_type(rs.getString("account_type"));
+				per.setAccount_no(rs.getInt("account_no"));
+				per.setDebit_date(rs.getInt("debit_date"));
+				per.setCustomer_id(rs.getInt("customer_id"));
 
 				personalinformation.add(per);
 				System.out.println(per);
