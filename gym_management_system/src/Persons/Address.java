@@ -211,39 +211,51 @@ public class Address {
 		scan.nextLine();
 
 		System.out.println("ENTER BUILDING NAME");
+		System.out.print(">");
 		String building_name = scan.nextLine();
 
 		System.out.println("ENTER COMPLEX NAME");
+		System.out.print(">");
 		String complex_name = scan.nextLine();
 
 		System.out.println("ENTER APARTMENT NUMBER");
+		System.out.print(">");
 		int apartment_number = scan.nextInt();
 
 		System.out.println("ENTER STREET NUMBER");
+		System.out.print(">");
 		int street_number = scan.nextInt();
 		scan.nextLine();
 		System.out.println("ENTER STREET NAME");
+		System.out.print(">");
 		String street_name = scan.nextLine();
 
 		System.out.println("ENTER CITY");
+		System.out.print(">");
 		String city = scan.nextLine();
 
 		System.out.println("ENTER PROVINCE");
+		System.out.print(">");
 		String province = scan.nextLine();
 
 		System.out.println("ENTER COUNTRY");
+		System.out.print(">");
 		String country = scan.nextLine();
 
 		System.out.println("ENTER POSTAL CODE");
+		System.out.print(">");
 		int postal_code = scan.nextInt();
 
 		System.out.println("ENTER CUSTOMER ID");
+		System.out.print(">");
 		int customer_id = scan.nextInt();
 
 		System.out.println("ENTER EMPLOYEE ID");
+		System.out.print(">");
 		int employee_id = scan.nextInt();
 
 		System.out.println("ENTER INFORMATION ID");
+		System.out.print(">");
 		int information_id = scan.nextInt();
 
 		ad = "INSERT INTO address(building_name,complex_name,apartment_number,street_number,street_name,city,province,country,postal_code,"

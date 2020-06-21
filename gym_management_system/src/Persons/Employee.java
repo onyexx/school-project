@@ -10,8 +10,8 @@ public class Employee {
 	public int phone_no;
 	public String id;
 	public String dateOfBirth;
-	public String username;
-	public String password;
+	public static String username;
+	public static String password;
 	public int address_id;
 	public static String em;
 
@@ -71,7 +71,7 @@ public class Employee {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public String getUsername() {
+	public static String getUsername() {
 		return username;
 	}
 
@@ -79,7 +79,7 @@ public class Employee {
 		this.username = username;
 	}
 
-	public String getPassword() {
+	public static String getPassword() {
 		return password;
 	}
 
@@ -176,32 +176,40 @@ public class Employee {
 		scan.nextLine();
 
 		System.out.println("ENTER FIRSTNAME!");
+		System.out.print(">");
 		String firstname = scan.nextLine();
 
 		System.out.println("ENTER LASTNAME!");
 		String lastname = scan.nextLine();
 
 		System.out.println("ENTER EMAIL!");
+		System.out.print(">");
 		String email = scan.nextLine();
 
 		System.out.println("ENTER PHONE NUMBER!");
+		System.out.print(">");
 		int phone_no = scan.nextInt();
 
 		scan.nextLine();
 
 		System.out.println("ENTER ID NUMBER OR PASSPORT NUMBER!");
+		System.out.print(">");
 		String id = scan.nextLine();
 
 		System.out.println("ENTER DATE OF BIRTH!");
+		System.out.print(">");
 		String dateOfBirth = scan.nextLine();
 
 		System.out.println("ENTER USERNAME!");
+		System.out.print(">");
 		String username = scan.nextLine();
 
 		System.out.println("ENTER PASSWORD!");
+		System.out.print(">");
 		String password = scan.nextLine();
 
 		System.out.println("ENTER ADDRESS ID!");
+		System.out.print(">");
 		int address_id = scan.nextInt();
 
 		em = "INSERT INTO employee(firstname,lastname,email,phone_no,id,dateOfBirth,username,password,address_id)"
@@ -211,7 +219,35 @@ public class Employee {
 	}
 
 	public static void empLogin(Scanner scan) {
+		int count = 0;
+		int attempt = 0;
 
+		for (attempt = 0; attempt <= 3; attempt++) {
+
+			scan.nextLine();
+
+			System.out.println("ENTER USERNAME!");
+			System.out.print(">");
+			String username = scan.nextLine();
+			
+			System.out.println("ENTER PASSWORD!");
+			System.out.print(">");
+			String password = scan.nextLine();
+
+			count++;
+
+			if (username.equalsIgnoreCase(getUsername()) && password.equals(getPassword())) {
+				System.out.println("YOU HAVE SUCCESSFULLY LOGIN:" + getUsername());
+				break;
+			} else if (count == 3) {
+				System.out.println("MAXIMMUM ATTEMPT REACHED YOUR ACCOUNT IS BLOCKED CONTACT MANAGEMENT FOR HELP");
+
+			} else {
+				System.out.println("INVALID USERNAME OR PASSWORD PLEASE TRY AGAIN");
+				System.out.println("you have " + " " + count + " /3 attempt left");
+
+			}
+
+		}
 	}
-
 }

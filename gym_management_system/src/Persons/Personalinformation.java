@@ -452,62 +452,85 @@ public class Personalinformation {
 		System.out.println("\t \tEMPLOYMENT DETAILS");
 		scan.nextLine();
 		System.out.println("ENTER EMPLOYER NAME");
+		System.out.print(">");
 		String employer_name = scan.nextLine();
 
 		System.out.println("ENTER OCCUPATION");
+		System.out.print(">");
 		String occupation = scan.nextLine();
 
 		System.out.println("ENTER EMPLOYMENT DURATION");
+		System.out.print(">");
 		String employment_duration = scan.nextLine();
 
 		System.out.println("ENTER GROSS INCOME");
+		System.out.print(">");
 		String gross_income = scan.nextLine();
 
 		System.out.println("ENTER NET INCOME");
+		System.out.print(">");
 		String net_income = scan.nextLine();
 
 		System.out.println("ENTER GROSS MONTHLY EXPENSES");
+		System.out.print(">");
 		String gross_monthly_expenses = scan.nextLine();
 
 		System.out.println("ENTER COMPANY STREET NAME");
+		System.out.print(">");
 		String company_street_name = scan.nextLine();
 
 		System.out.println("ENTER COMPANY SUBURB");
+		System.out.print(">");
 		String company_suburb = scan.nextLine();
 
 		System.out.println("ENTER COMPANY CITY");
+		System.out.print(">");
 		String company_city = scan.nextLine();
 
 		System.out.println("ENTER POSTAL CODE");
+		System.out.print(">");
 		int postal_code = scan.nextInt();
 
 		System.out.println("\t \tBANKING DETAILS");
+		
 		scan.nextLine();
+		
 		System.out.println("ENTER BANK NAME");
+		System.out.print(">");
 		String bank_name = scan.nextLine();
 
 		System.out.println("ENTER BRANCH NAME");
+		System.out.print(">");
 		String branch_name = scan.nextLine();
 
 		System.out.println("ENTER BRANCH CODE");
+		System.out.print(">");
 		int branch_code = scan.nextInt();
+		
 		scan.nextLine();
+		
 		System.out.println("ENTER ACCOUNT HOLDER");
+		System.out.print(">");
 		String account_holder = scan.nextLine();
 
 		System.out.println("ENTER ACCOUNT TYPE");
+		System.out.print(">");
 		String account_type = scan.nextLine();
 
 		System.out.println("ENTER ACCOUNT NUMBER");
+		System.out.print(">");
 		int account_no = scan.nextInt();
 
 		System.out.println("ENTER DEBIT DATE");
+		System.out.print(">");
 		int debit_date = scan.nextInt();
 
 		System.out.println("ENTER CUSTOMER ID");
+		System.out.print(">");
 		int customer_id = scan.nextInt();
 		
 		System.out.println("ENTER ADDRESS ID");
+		System.out.print(">");
 		int address_id = scan.nextInt();
 
 		info = "INSERT INTO personalinformation(employer_name,occupation,employment_duration,gross_income,net_income,gross_monthly_expenses,company_street_name,company_suburb,company_city,postal_code,bank_name,branch_name,branch_code,account_holder,account_type,account_no,debit_date,customer_id,address_id) "
