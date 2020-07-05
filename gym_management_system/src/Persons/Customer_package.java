@@ -5,36 +5,39 @@ public class Customer_package {
 	public String package_name;
 	public String amount;
 	public int customer_id;
+
 	public int getPackage_id() {
 		return package_id;
 	}
+
 	public void setPackage_id(int package_id) {
 		this.package_id = package_id;
 	}
+
 	public String getPackage_name() {
 		return package_name;
 	}
+
 	public void setPackage_name(String package_name) {
 		this.package_name = package_name;
 	}
+
 	public String getAmount() {
 		return amount;
 	}
+
 	public void setAmount(String amount) {
 		this.amount = amount;
 	}
+
 	public int getCustomer_id() {
 		return customer_id;
 	}
+
 	public void setCustomer_id(int customer_id) {
 		this.customer_id = customer_id;
 	}
-	@Override
-	public String toString() {
-		return "Customer_package [package_id=" + package_id + ", package_name=" + package_name + ", amount=" + amount
-				+ ", customer_id=" + customer_id + "]";
-	}
-	@Override
+
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -44,6 +47,7 @@ public class Customer_package {
 		result = prime * result + ((package_name == null) ? 0 : package_name.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -69,7 +73,5 @@ public class Customer_package {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }

@@ -31,7 +31,7 @@ public class Application {
 
 			case 1:
 				 Employee.empRegistration(scan);
-				//Address.addDetails(scan);
+				Address.addDetails(scan);
 				break;
 			case 2:
 		        Customer.cusRegistration(scan);
@@ -53,7 +53,7 @@ public class Application {
 			 * Address.addDetails(scan); Personalinformation.infoDetails(scan); } else if
 			 * (input == 3) { Employee.empLogin(scan); } break;
 			 */
-			break;
+		
 		}
 		
 
@@ -73,7 +73,7 @@ public class Application {
 			 stmt.executeUpdate(Personalinformation.info);
 			 
 
-			ResultSet rs = stmt.executeQuery("SELECT * FROM  employee");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM  employee,address,customer,personalinformation");
 
 			while (rs.next()) {
 				Employee em = new Employee();
